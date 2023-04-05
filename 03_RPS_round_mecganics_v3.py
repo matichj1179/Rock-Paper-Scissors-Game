@@ -1,15 +1,12 @@
-import random
+# Function used to check input is valid
 
 
-# Functions go here
 def check_rounds():
     while True:
         response = input("How many rounds: ")
 
-        round_error = "please type either <enter> or amd integer that is more than 0\n"
+        round_error = "please type either <enter> or amd integer that is more than 0"
 
-        # If infinite mode not chosen, check response
-        # is an integer that is more than 0
         if response != "":
             try:
                 response = int(response)
@@ -25,7 +22,7 @@ def check_rounds():
         return response
 
 
-# Main routine goes here
+# Main routine goes here...
 
 rounds_played = 0
 choose_instruction = "please choose rock (r), paper (p) or scissors (s)"
@@ -56,19 +53,3 @@ while end_game == "no":
 
     rounds_played += 1
 print("Thank you for playing")
-
-# Lists of valid responses
-yes_no_list = ["yes", "no"]
-rps_list = ["rock", "paper", "scissors", "xxx"]
-
-# Ask user if they have played before.
-# If 'yes', show instructions
-
-
-# Ask user for # of rounds then loop...
-
-# Ask user if they want to see their game history
-# If yes show game history
-
-
-# Show game statistics
