@@ -25,10 +25,32 @@ def check_rounds():
         return response
 
 
+def choice_checker(question, valid_list, error):
+    valid = False
+    while not valid:
+
+        response = input(question).lower()
+
+        for item in valid_list:
+            if response == item[0] or response == item:
+                return item
+
+        print(error)
+        print()
+
+
 # Main routine goes here
 
-rounds_played = 0
+# set up valid options for user choice (including instruction and error message)
+rps_list = ["rock", "paper", "scissors", "xxx"]
 choose_instruction = "please choose rock (r), paper (p) or scissors (s)"
+choose_error = "Please choose from rock rock / paper / scissors (or xxx to quit)"
+
+# intialise rounds played, lost and drawn.
+# Rounds won can then be calculated later
+rounds_played = 0
+rounds_lost = 0
+rounds_drawn = 0
 
 # Ask user for # of rounds, <enter> for infinite mode
 rounds = check_rounds()
@@ -45,7 +67,13 @@ while end_game == "no":
         heading = f' Round {rounds_played + 1} of {rounds}'
 
     print(heading)
-    choose = input(f'{choose_instruction} or xxx to end: ')
+
+    # Ask user for choice and check it's valid
+    choose = choice_checker(choose_instruction, rps_list, choose_error)
+
+    # get computer choice
+    comp_choice = random.choice(rps_list[:-1])
+    print(comp_choice, end="\t")
 
     # end game if exit code is typed
     if choose == "xxx":
