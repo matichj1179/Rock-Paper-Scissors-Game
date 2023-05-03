@@ -46,7 +46,7 @@ rps_list = ["rock", "paper", "scissors", "xxx"]
 choose_instruction = "please choose rock (r), paper (p) or scissors (s)"
 choose_error = "Please choose from rock rock / paper / scissors (or xxx to quit)"
 
-# intialise rounds played, lost and drawn.
+# initialise rounds played, lost and drawn.
 # Rounds won can then be calculated later
 rounds_played = 0
 rounds_lost = 0
@@ -78,6 +78,7 @@ while end_game == "no":
     # compare options
     if user_choice == comp_choice:
         result = "tie"
+        rounds_drawn += 1
     elif user_choice == "paper" and comp_choice == "rock":
         result = "win"
     elif user_choice == "scissors" and comp_choice == "paper":
@@ -86,6 +87,7 @@ while end_game == "no":
         result = "win"
     else:
         result = "lose"
+        rounds_lost += 1
 
     print("You chose {}, the computer chose {}"
           "\nResult: {}".format(user_choice, comp_choice, result))
@@ -115,3 +117,14 @@ rps_list = ["rock", "paper", "scissors", "xxx"]
 
 
 # Show game statistics
+# quick calculations (stats)
+rounds_won = rounds_played - rounds_lost - rounds_drawn
+
+# end game statements
+print()
+print("'****** End Game Summary ******'")
+print("Won: {} \t|\t Lost: {} \t|\t Draw: "
+      "{}".format(rounds_won, rounds_lost, rounds_drawn))
+
+print()
+print("Thanks for playing")

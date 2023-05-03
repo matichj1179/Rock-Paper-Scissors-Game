@@ -18,3 +18,19 @@ for item in test_results:
 
     if result == "tie":
         result = "its a tie"
+        rounds_drawn +=1
+    elif result == "loss":
+        rounds_lost +=1
+
+# quick calculations (stats)
+rounds_won = rounds_played - rounds_lost - rounds_drawn
+
+# end game statements
+print()
+print("'****** End Game Summary ******'")
+print("Won: {} \t|\t Lost: {} \t|\t Draw: "
+      "{}".format (rounds_won, rounds_lost, rounds_drawn))
+
+print()
+print("Thanks for playing")
+
