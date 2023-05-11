@@ -4,7 +4,7 @@ import random
 # Functions go here
 def check_rounds():
     while True:
-        response = input("How many rounds: ")
+        response = input("How many rounds, push <enter> for infinite: ")
 
         round_error = "please type either <enter> or amd integer that is more than 0\n"
 
