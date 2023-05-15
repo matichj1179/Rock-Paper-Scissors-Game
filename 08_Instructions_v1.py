@@ -21,10 +21,16 @@ def instructions():
     print("Choose either a number of rounds or press <enter> for infinite mode")
     print()
     print("Then for each round, choose from rock / paper / scissors",
-          "\n(or xxx to quit) You can type r / p / s if you dont want to type the entire word.")
+          "\n(or xxx to quit) You can type r / p / s if you dont want to",
+          "\ntype the entire word.")
 
     print()
+    print("The rules are...",
+          "\n-Rock beats scissors",
+          "\n-scissors beats paper",
+          "\n-Paper beats rock.")
     print()
+    print("*** Have fun ***")
     print()
     return ""
 
